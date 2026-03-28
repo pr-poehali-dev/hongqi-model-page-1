@@ -68,7 +68,7 @@ export default function FeaturesSection() {
           <span className="w-8 h-px bg-hq-red" />
           <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Технологии</span>
         </div>
-        <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none mb-4">
+        <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none mb-4">
           Преимущества
         </h2>
         <p className="reveal delay-200 font-body font-light text-white/50 text-sm lg:text-base max-w-lg mb-16 lg:mb-24">
@@ -80,7 +80,7 @@ export default function FeaturesSection() {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className={`reveal delay-${Math.min((i + 1) * 100, 600)} group bg-[#060606] hover:bg-[#0d0d0d] p-8 lg:p-10 transition-all duration-500 cursor-pointer relative overflow-hidden`}
+              className={`reveal delay-${Math.min((i + 1) * 100, 600)} group bg-[#060606] hover:bg-[#0d0d0d] p-5 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer relative overflow-hidden`}
             >
               {/* Hover accent */}
               <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-hq-red to-hq-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />

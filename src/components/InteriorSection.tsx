@@ -38,7 +38,7 @@ export default function InteriorSection() {
               <span className="w-8 h-px bg-hq-red" />
               <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Интерьер</span>
             </div>
-            <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none mb-8">
+            <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none mb-8">
               Мир<br />внутри
             </h2>
             <p className="reveal delay-200 font-body font-light text-white/60 text-base leading-relaxed mb-10">

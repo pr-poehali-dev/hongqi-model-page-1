@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
           <span className="w-8 h-px bg-hq-red" />
           <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Отзывы</span>
         </div>
-        <h2 className="reveal delay-100 font-display text-5xl lg:text-6xl font-light text-white leading-none mb-16">
+        <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-6xl font-light text-white leading-none mb-16">
           Говорят владельцы
         </h2>
 
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
                 <Icon key={i} name="Star" size={12} className="text-hq-gold fill-current" />
               ))}
             </div>
-            <blockquote className="font-display text-2xl lg:text-3xl font-light text-white leading-relaxed mb-8">
+            <blockquote className="font-display text-xl sm:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-8">
               «{testimonials[active].text}»
             </blockquote>
             <div className="flex items-center gap-4">

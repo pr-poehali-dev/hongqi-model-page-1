@@ -105,7 +105,7 @@ export default function EngineSection() {
       className="relative bg-[#060606] py-20 lg:py-32 overflow-hidden"
     >
       {/* subtle red glow behind engine */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-hq-red/6 blur-[120px] pointer-events-none" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[600px] h-[300px] bg-hq-red/6 blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         {/* Header */}
@@ -114,7 +114,7 @@ export default function EngineSection() {
           <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Инженерия</span>
         </div>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-4">
-          <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none">
+          <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none">
             Сердце<br /><span className="text-hq-red">3.0 V6</span>
           </h2>
           <p className="reveal delay-200 font-body font-light text-white/40 text-sm max-w-xs">

@@ -34,7 +34,7 @@ export default function OverviewSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left: text */}
           <div>
-            <h2 className="reveal font-display text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-none mb-8">
+            <h2 className="reveal font-display text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-none mb-8">
               Новая эра<br />
               <span className="text-hq-red">величия</span>
             </h2>
@@ -53,7 +53,7 @@ export default function OverviewSection() {
                 { num: '12', text: 'наград дизайна' },
               ].map((item) => (
                 <div key={item.num} className="flex flex-col">
-                  <span className="font-display text-3xl lg:text-4xl font-light text-hq-gold">{item.num}</span>
+                  <span className="font-display text-2xl lg:text-4xl font-light text-hq-gold">{item.num}</span>
                   <span className="text-[10px] tracking-[0.25em] text-white/40 uppercase font-body mt-1">{item.text}</span>
                 </div>
               ))}

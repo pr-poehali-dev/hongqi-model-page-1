@@ -54,9 +54,10 @@ export default function ConfiguratorSection() {
               <span className="w-8 h-px bg-hq-red" />
               <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Конфигуратор</span>
             </div>
-            <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none">
+            <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none">
               Создайте<br />свой H9
             </h2>
+            <div className="lg:hidden font-display text-2xl text-hq-gold font-light">{packages[activePackage].price} ₽</div>
           </div>
           <div className="reveal delay-200 font-body text-right hidden lg:block">
             <span className="text-white/40 text-sm">Текущая конфигурация:</span>
@@ -90,7 +91,7 @@ export default function ConfiguratorSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: Car preview */}
           <div className="reveal relative">
-            <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-b from-[#0d0d0d] to-[#050505]">
+            <div className="relative overflow-hidden aspect-[4/3] sm:aspect-[16/9] bg-gradient-to-b from-[#0d0d0d] to-[#050505]">
               <img
                 src={colors[activeColor].image}
                 alt="Hongqi H9 configurator"

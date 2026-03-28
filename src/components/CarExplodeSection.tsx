@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 type Part = {
   id: string;
@@ -107,12 +107,31 @@ const PARTS: Part[] = [
 
 const LABELED = PARTS.filter(p => p.label);
 
+const SCENE_W = 700;
+const SCENE_H = 380;
+
 export default function CarExplodeSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [exploded, setExploded] = useState(false);
-  const [hov, setHov]           = useState<string|null>(null);
-  const [visible, setVisible]   = useState(false);
+  const sectionRef  = useRef<HTMLDivElement>(null);
+  const wrapperRef  = useRef<HTMLDivElement>(null);
+  const [exploded,  setExploded]  = useState(false);
+  const [hov,       setHov]       = useState<string|null>(null);
+  const [visible,   setVisible]   = useState(false);
   const [autoFired, setAutoFired] = useState(false);
+  const [scale,     setScale]     = useState(1);
+
+  // Адаптивный масштаб сцены
+  const updateScale = useCallback(() => {
+    if (!wrapperRef.current) return;
+    const available = wrapperRef.current.clientWidth;
+    setScale(Math.min(1, available / SCENE_W));
+  }, []);
+
+  useEffect(() => {
+    updateScale();
+    const ro = new ResizeObserver(updateScale);
+    if (wrapperRef.current) ro.observe(wrapperRef.current);
+    return () => ro.disconnect();
+  }, [updateScale]);
 
   // reveal + auto-demo on first enter
   useEffect(() => {
@@ -158,13 +177,13 @@ export default function CarExplodeSection() {
             <span className="text-[10px] tracking-[.4em] text-hq-gold uppercase font-body">Конструкция</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
-            <h2 className="font-display text-5xl lg:text-7xl font-light text-white leading-none">
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none">
               Взрыв-схема<br/><span className="text-hq-red">кузова</span>
             </h2>
             {/* toggle button */}
             <button
               onClick={() => setExploded(v => !v)}
-              className="flex items-center gap-3 border text-[11px] tracking-[.2em] uppercase font-body px-7 py-3 transition-all duration-400 self-start lg:self-auto"
+              className="flex items-center gap-3 border text-[10px] sm:text-[11px] tracking-[.2em] uppercase font-body px-5 sm:px-7 py-2.5 sm:py-3 transition-all duration-400 self-start lg:self-auto"
               style={{
                 borderColor:  exploded ? '#c49a22' : '#c0251a',
                 color:        '#fff',
@@ -182,26 +201,32 @@ export default function CarExplodeSection() {
 
         {/* ── 3-D сцена ──────────────────────────────────────────────── */}
         <div
-          style={{ opacity: visible ? 1 : 0, transition: 'opacity .6s ease .2s' }}
+          ref={wrapperRef}
+          style={{ opacity: visible ? 1 : 0, transition: 'opacity .6s ease .2s', width: '100%' }}
         >
-          {/* outer perspective wrapper */}
+          {/* outer perspective wrapper — масштабируется под ширину экрана */}
           <div
             style={{
-              width: '100%',
-              overflowX: 'auto',
-              perspective: '1100px',
+              width:  '100%',
+              height: `${SCENE_H * scale + (exploded ? 120 * scale : 0)}px`,
+              position: 'relative',
+              perspective: `${1100 * scale}px`,
               perspectiveOrigin: '50% 42%',
+              transition: 'height .65s ease',
+              overflow: 'visible',
             }}
           >
-            {/* scene — fixed 700×380, centred */}
+            {/* сцена фиксированного размера, масштабируется через scale */}
             <div
               style={{
-                position:   'relative',
-                width:      '700px',
-                height:     '380px',
-                margin:     '0 auto',
+                position:   'absolute',
+                left:       '50%',
+                top:        0,
+                width:      `${SCENE_W}px`,
+                height:     `${SCENE_H}px`,
+                transformOrigin: 'top center',
+                transform:  `translateX(-50%) scale(${scale}) rotateX(${exploded ? 8 : 18}deg) rotateY(${exploded ? 12 : 0}deg)`,
                 transformStyle: 'preserve-3d',
-                transform:  `rotateX(${exploded ? 8 : 18}deg) rotateY(${exploded ? 12 : 0}deg)`,
                 transition: 'transform .9s cubic-bezier(.4,0,.2,1)',
               }}
             >

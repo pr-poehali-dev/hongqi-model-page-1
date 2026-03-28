@@ -42,7 +42,7 @@ export default function TestDriveSection() {
               <span className="w-8 h-px bg-hq-red" />
               <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Тест-драйв</span>
             </div>
-            <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none mb-8">
+            <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none mb-8">
               Почувствуйте<br />
               <span className="text-hq-red">мощь</span>
             </h2>

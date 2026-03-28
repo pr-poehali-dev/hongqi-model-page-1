@@ -12,7 +12,7 @@ export default function HongqiFooter() {
     <footer className="bg-[#060606] border-t border-white/5">
       {/* Main footer content */}
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24 py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-8 lg:gap-8">
           {/* Brand column */}
           <div>
             <div className="flex flex-col mb-6">
@@ -92,7 +92,7 @@ export default function HongqiFooter() {
           <p className="text-[11px] font-body text-white/25">
             © 2024 Hongqi Russia. Все права защищены. Цены указаны с учётом НДС и могут быть изменены.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-3 sm:gap-6">
             {['Политика конфиденциальности', 'Условия использования', 'Cookie'].map((link) => (
               <a key={link} href="#" className="text-[11px] font-body text-white/25 hover:text-white/60 transition-colors">
                 {link}

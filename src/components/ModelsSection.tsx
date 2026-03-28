@@ -55,7 +55,7 @@ export default function ModelsSection() {
               <span className="w-8 h-px bg-hq-red" />
               <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Линейка</span>
             </div>
-            <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none">
+            <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none">
               Модели Hongqi
             </h2>
           </div>
@@ -93,7 +93,7 @@ export default function ModelsSection() {
 
               <div className="relative p-6 lg:p-8">
                 <div className="flex items-end justify-between mb-2">
-                  <span className="font-display text-4xl font-light text-white">{model.name}</span>
+                  <span className="font-display text-3xl sm:text-4xl font-light text-white">{model.name}</span>
                   <span className="font-body text-sm font-light text-hq-gold">{model.price}</span>
                 </div>
                 <p className="text-[11px] tracking-[0.2em] text-white/40 uppercase font-body mb-6">{model.category}</p>

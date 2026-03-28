@@ -76,7 +76,7 @@ export default function SpecsSection() {
               <span className="w-8 h-px bg-hq-red" />
               <span className="text-[10px] tracking-[0.4em] text-hq-gold uppercase font-body">Характеристики</span>
             </div>
-            <h2 className="reveal delay-100 font-display text-5xl lg:text-7xl font-light text-white leading-none">
+            <h2 className="reveal delay-100 font-display text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-none">
               Технические<br />данные
             </h2>
           </div>
@@ -138,7 +138,7 @@ export default function SpecsSection() {
             { value: '800', unit: 'км', label: 'Запас хода' },
           ].map((stat) => (
             <div key={stat.label} className="bg-[#060606] p-8 lg:p-10 group hover:bg-[#0d0d0d] transition-all">
-              <span className="font-display text-5xl lg:text-6xl font-light text-white group-hover:text-hq-gold transition-colors">
+              <span className="font-display text-3xl sm:text-5xl lg:text-6xl font-light text-white group-hover:text-hq-gold transition-colors">
                 {stat.value}
               </span>
               <span className="font-display text-2xl text-hq-red ml-2">{stat.unit}</span>

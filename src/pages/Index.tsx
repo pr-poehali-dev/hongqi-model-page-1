@@ -7,6 +7,7 @@ import GallerySection from '@/components/GallerySection';
 import ConfiguratorSection from '@/components/ConfiguratorSection';
 import SpecsSection from '@/components/SpecsSection';
 import EngineSection from '@/components/EngineSection';
+import CarExplodeSection from '@/components/CarExplodeSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import BuySection from '@/components/BuySection';
 import TestDriveSection from '@/components/TestDriveSection';
@@ -26,6 +27,7 @@ export default function Index() {
         <ConfiguratorSection />
         <SpecsSection />
         <EngineSection />
+        <CarExplodeSection />
         <TestimonialsSection />
         <BuySection />
         <TestDriveSection />
